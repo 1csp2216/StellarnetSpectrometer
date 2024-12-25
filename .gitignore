@@ -1,0 +1,15 @@
+# Files generated during build
+configure/CONFIG.PyDevice
+O.linux*
+O.Common
+envPaths
+bin/
+lib/
+db/
+dbd/
+include/
+*.pyc
+python/stellarnet_driverLibs
+
+# Various IDE project files
+.vscode/
