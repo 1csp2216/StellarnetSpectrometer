@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Saved on 2024-12-25 18:45:48 by mix3k-->
+<display version="2.0.0">
+  <name>Display</name>
+  <macros>
+    <P>StellarNet1</P>
+  </macros>
+  <widget type="label" version="2.0.0">
+    <name>Label</name>
+    <class>TITLE</class>
+    <text>StellarNet</text>
+    <x use_class="true">0</x>
+    <y use_class="true">0</y>
+    <width>550</width>
+    <height>31</height>
+    <font use_class="true">
+      <font name="Header 1" family="Liberation Sans" style="BOLD" size="22.0">
+      </font>
+    </font>
+    <foreground_color use_class="true">
+      <color name="Text" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <transparent use_class="true">true</transparent>
+  </widget>
+  <widget type="xyplot" version="3.0.0">
+    <name>Spectorometer</name>
+    <x>40</x>
+    <y>70</y>
+    <width>510</width>
+    <height>330</height>
+    <x_axis>
+      <title>Wavelength[nm]</title>
+      <autoscale>false</autoscale>
+      <log_scale>false</log_scale>
+      <minimum>350.0</minimum>
+      <maximum>800.0</maximum>
+      <show_grid>true</show_grid>
+      <title_font>
+        <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+        </font>
+      </title_font>
+      <scale_font>
+        <font name="Default" family="Liberation Sans" style="REGULAR" size="14.0">
+        </font>
+      </scale_font>
+      <visible>true</visible>
+    </x_axis>
+    <y_axes>
+      <y_axis>
+        <title>intensity[a.u.]</title>
+        <autoscale>true</autoscale>
+        <log_scale>false</log_scale>
+        <minimum>0.0</minimum>
+        <maximum>2500.0</maximum>
+        <show_grid>true</show_grid>
+        <title_font>
+          <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+          </font>
+        </title_font>
+        <scale_font>
+          <font name="Default" family="Liberation Sans" style="REGULAR" size="14.0">
+          </font>
+        </scale_font>
+        <on_right>false</on_right>
+        <visible>true</visible>
+        <color>
+          <color name="Text" red="0" green="0" blue="0">
+          </color>
+        </color>
+      </y_axis>
+    </y_axes>
+    <traces>
+      <trace>
+        <name>$(traces[0].y_pv)</name>
+        <x_pv>$(P):wavelength</x_pv>
+        <y_pv>$(P):spectrum</y_pv>
+        <err_pv></err_pv>
+        <axis>0</axis>
+        <trace_type>1</trace_type>
+        <color>
+          <color red="0" green="0" blue="255">
+          </color>
+        </color>
+        <line_width>1</line_width>
+        <line_style>0</line_style>
+        <point_type>0</point_type>
+        <point_size>10</point_size>
+        <visible>true</visible>
+      </trace>
+    </traces>
+  </widget>
+  <widget type="textentry" version="3.0.0">
+    <name>Text Entry</name>
+    <pv_name>$(P):inttime</pv_name>
+    <x>620</x>
+    <y>70</y>
+    <width>190</width>
+    <height>40</height>
+    <format>1</format>
+  </widget>
+  <widget type="spinner" version="2.0.0">
+    <name>Spinner</name>
+    <pv_name>$(P):scansavg</pv_name>
+    <x>620</x>
+    <y>146</y>
+    <width>190</width>
+    <height>40</height>
+    <minimum>1.0</minimum>
+    <maximum>1000.0</maximum>
+  </widget>
+  <widget type="choice" version="2.0.0">
+    <name>Choice Button</name>
+    <pv_name>$(P):xtiming</pv_name>
+    <x>620</x>
+    <y>300</y>
+    <width>190</width>
+    <height>40</height>
+    <selected_color>
+      <color name="OK" red="0" green="255" blue="0">
+      </color>
+    </selected_color>
+    <items>
+      <item>LOW</item>
+      <item>MIDDLE</item>
+      <item>HIGH</item>
+    </items>
+  </widget>
+  <widget type="bool_button" version="2.0.0">
+    <name>Boolean Button_2</name>
+    <pv_name>$(P):measure</pv_name>
+    <x>100</x>
+    <y>420</y>
+    <width>160</width>
+    <height>40</height>
+    <off_label>Measure</off_label>
+    <off_color>
+      <color name="Button_Background" red="210" green="210" blue="210">
+      </color>
+    </off_color>
+    <on_label>Wait</on_label>
+    <show_led>false</show_led>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_1</name>
+    <text>Optical resoltution</text>
+    <x>630</x>
+    <y>250</y>
+    <width>180</width>
+    <height>30</height>
+  </widget>
+</display>
